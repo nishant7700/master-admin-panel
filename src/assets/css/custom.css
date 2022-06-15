@@ -1,0 +1,214 @@
+body {
+  background: #fbfbff;
+  font-family: "Poppins", sans-serif;
+}
+.table-striped > tbody > tr:nth-of-type(odd) {
+  --bs-table-accent-bg: #e0f3e4;
+  color: var(--bs-table-striped-color);
+}
+.navbar-brand-box {
+  padding: 0 1.5rem;
+  width: 250px;
+  background: #fff;
+  border-right: none;
+}
+#page-topbar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1002;
+  background-color: #fff;
+  border-bottom: 1px solid #f1f1f1;
+}
+.dropdown-menu-end {
+  right: 0px !important;
+}
+.form-group label {
+  padding: 5px 5px;
+}
+.navbar-expand-lg .navbar-nav {
+  flex-wrap: wrap;
+}
+.page-content {
+  padding: 115px 10px 5px;
+}
+.topnav {
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px,
+    rgba(17, 17, 26, 0.05) 0px 8px 32px;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 10px 10px;
+}
+.topnav .dropdown .dropdown-menu {
+  background: rgba(255, 255, 255, 0.7);
+}
+.topnav1 {
+  background: #fff;
+  box-shadow: 0 4px 6px 0 rgb(12 0 46 / 8%);
+}
+.work-card {
+  margin: 10px;
+  padding: 30px 20px;
+  max-height: 170px;
+  text-align: center;
+  min-height: 170px;
+  border-radius: 8px 40px;
+  -webkit-box-shadow: 0 3.4px 2.7px -30px rgba(0, 0, 0, 0.059),
+    0 8.2px 8.9px -30px rgba(0, 0, 0, 0.071),
+    0 25px 40px -30px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 3.4px 2.7px -30px rgba(0, 0, 0, 0.059),
+    0 8.2px 8.9px -30px rgba(0, 0, 0, 0.071),
+    0 25px 40px -30px rgba(0, 0, 0, 0.2);
+}
+.header-item,
+.header-item:hover {
+  color: #000;
+}
+.card-content img {
+  width: 100%;
+}
+.desktop-only {
+  display: block;
+}
+.mobile-only {
+  display: none;
+}
+.product-data-sidebar {
+  background: #fafafa;
+  height: 100%;
+  padding: 10px 10px;
+}
+.sidebar-link {
+  border-bottom: 1px solid #f1f1f1;
+  padding: 10px 10px;
+}
+.sidebar-link a {
+  color: #666;
+}
+.sidebar-link a i {
+  padding-right: 5px;
+}
+.sidebar-link a:hover {
+  color: #000;
+}
+.active-sidebar {
+  background-color: #000;
+}
+.active-sidebar a {
+  color: #fff;
+}
+.active-sidebar a:hover {
+  color: #fff;
+}
+a {
+  cursor: pointer;
+}
+.dashboard-stat {
+  background: #fff;
+  padding: 20px 20px;
+  box-shadow: rgb(227 233 243) 0px 4px 22px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+.dashboard-stat .report-title {
+  /* font-size: 16px; */
+  color: #666;
+}
+.dashboard-stat .report-stat {
+  font-size: 32px;
+  color: #333;
+  font-weight: 600;
+}
+.stat-btn {
+  margin-top: 10px;
+}
+.stat-btn a {
+  background: #333;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+}
+.pending {
+  /* border-bottom: 5px solid rgba(255, 99, 132, 1); */
+}
+.closed {
+  /* border-bottom: 5px solid rgba(255, 205, 86, 1); */
+}
+.todays {
+  /* border-bottom: 5px solid rgba(54, 162, 235, 1); */
+}
+.processing {
+  /* border-bottom: 5px solid rgba(255, 159, 64, 1); */
+}
+.dashboard-stat img {
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+.Modal {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  min-width: 450px;
+  width: 45%;
+  background-color: #fff;
+  height: 100%;
+  overflow-y: scroll;
+  box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px,
+    rgba(17, 17, 26, 0.05) 0px 8px 32px;
+}
+
+.Overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rebeccapurple;
+  z-index: 99999;
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px,
+    rgba(17, 17, 26, 0.05) 0px 8px 32px;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+}
+.quick-view {
+}
+.qv-header {
+  background: #f1f1f1;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.qv-header .title {
+  font-size: 18px;
+  color: #333;
+  font-weight: 700;
+}
+body::-webkit-scrollbar {
+  width: 10px;
+}
+body::-webkit-scrollbar-track {
+  background: #fbfbff;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: #999;
+  border-radius: 20px;
+  border: 3px solid #fbfbff;
+}
+.Modal::-webkit-scrollbar {
+}
+.Modal::-webkit-scrollbar-track {
+  background: #fbfbff;
+}
+.Modal::-webkit-scrollbar-thumb {
+  background-color: #999;
+  border-radius: 20px;
+  border: 3px solid #fbfbff;
+}
