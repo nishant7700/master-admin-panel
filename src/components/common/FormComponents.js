@@ -14,8 +14,7 @@ function FormComponents({
   dropdown_options,
   setGallery,
   edit,
-  handleSelectInputChange,
-  loadSelectOptions,
+  loadOptions,
 }) {
   // console.log(typeof loadSelectOptions);
   let history = useHistory();
@@ -80,7 +79,11 @@ function FormComponents({
                 </div>
               );
             }
-            if (inputFields[item] && !inputFields[item].hideOnEntry && inputFields[item].type === "related") {
+            if (
+              inputFields[item] &&
+              !inputFields[item].hideOnEntry &&
+              inputFields[item].type === "related"
+            ) {
               return (
                 <div className="col-md-6">
                   <SelectBox
@@ -107,37 +110,18 @@ function FormComponents({
               return (
                 <div className="col-md-6">
                   <label> {inputFields[item].title} </label>
-                  <Select
-                    isClearable
-                    isSearchable
-                    getOptionLabel={(e) => e.label}
-                    getOptionValue={(e) => e.value}
-                    options={
-                      inputFields[item] && inputFields[item].options
-                        ? inputFields[item].options
-                        : []
+
+                  <AsyncSelect
+                    loadOptions={(inputValue, callback) =>
+                      loadOptions(inputValue, callback, item)
                     }
-                  />
-                  {/* <AsyncSelect
-                    isClearable
-                    isSearchable
-                    cacheOptions
-                    defaultOptions
-                    getOptionLabel={(e) => e.label}
-                    getOptionValue={(e) => e.value}
-                    loadOptions={(value, callback) =>
-                      loadSelectOptions({ field: item, value: value }, callback)
-                    }
-                    onInputChange={(value) =>
-                      handleSelectInputChange(item, value)
-                    }
-                    onChange={(value) => {
-                      formik.setFieldValue(
-                        item,
-                        value && value.value ? value.value : ""
-                      );
+                    defaultOptions={dropdown_options && dropdown_options[item]}
+                    onChange={(e) => {
+                      if (e) {
+                        formik.setFieldValue(item, e.value);
+                      }
                     }}
-                  /> */}
+                  />
 
                   {formik.errors && formik.errors[item] && (
                     <p className="text-danger"> Required </p>

@@ -15,6 +15,13 @@ export const inputFields = {
     inputType: "select",
     options: ["PAID", "NOT PAID"],
   },
+  client: {
+    type: "related-2",
+    required: true,
+    title: "Client",
+    inputType: "select",
+    options: ["PAID", "NOT PAID"],
+  },
 };
 export const initialValues = {
   name: "",

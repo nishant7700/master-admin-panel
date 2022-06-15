@@ -27,7 +27,15 @@ const EditClient = ({ match }) => {
   const { client_loading, client, edit_client_loading } = single_data;
   const [featuredImage, setFeaturedImage] = useState(null);
 
-  const [dropdownOptions] = useGetDropdownOptions();
+  const [dropdownOptions, setClientSearchField, setClientSearchValue] =
+    useGetDropdownOptions();
+  const loadOptions = async (inputValue, callback, field) => {
+    if (field == "client") {
+      await setClientSearchField("name");
+      await setClientSearchValue(inputValue);
+      callback(dropdownOptions.client);
+    }
+  };
   const submitFormClicked = async (values) => {
     const data = await convertToFormData({ values, featuredImage });
     await updateData(client._id, data);
@@ -83,6 +91,7 @@ const EditClient = ({ match }) => {
                     initialValues={initialValues}
                     dropdown_options={dropdownOptions}
                     loading={edit_client_loading}
+                    loadOptions={loadOptions}
                   />
                 </div>
               )

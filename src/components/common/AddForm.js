@@ -15,8 +15,7 @@ function AddForm({
   inputFields,
   initialValues,
   dropdown_options,
-  handleSelectInputChange,
-  loadSelectOptions,
+  loadOptions,
 }) {
   let history = useHistory();
 
@@ -112,8 +111,7 @@ function AddForm({
                     dropdown_options={dropdown_options}
                     setGallery={setGallery}
                     edit={edit}
-                    handleSelectInputChange={handleSelectInputChange}
-                    loadSelectOptions={loadSelectOptions}
+                    loadOptions={loadOptions}
                   />
                 );
               }}
@@ -142,8 +140,7 @@ function AddForm({
                   dropdown_options={dropdown_options}
                   setGallery={setGallery}
                   edit={edit}
-                  handleSelectInputChange={handleSelectInputChange}
-                  loadSelectOptions={loadSelectOptions}
+                  loadOptions={loadOptions}
                 />
               );
             }}

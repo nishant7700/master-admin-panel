@@ -19,7 +19,7 @@ import {
 import SidebarFilter from "../../components/common/SidebarFilter";
 const AllClients = ({}) => {
   const [data, setPageNumber, deleteBtnClicked] = useAllClients();
-  console.log("DATA", data);
+
   const { clients_loading, clients, total_clients, page, pages } = data;
 
   // Related DropDown Started

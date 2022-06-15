@@ -11,7 +11,10 @@ import {
   PAGE_SINGLE_TITLE,
   LINK_URL,
 } from "../../shared/enums/clients_enum";
-import { useCreateClient,useGetDropdownOptions } from "../../shared/hooks/UseClient";
+import {
+  useCreateClient,
+  useGetDropdownOptions,
+} from "../../shared/hooks/UseClient";
 // import { useSelectAllClient } from "../../shared/hooks/UseClient";
 
 const AddClient = ({}) => {
@@ -20,8 +23,6 @@ const AddClient = ({}) => {
   const { add_client_loading } = client;
   const [featuredImage, setFeaturedImage] = useState(null);
   const [gallery, setGallery] = useState(null);
- 
- 
 
   const submitFormClicked = async (values) => {
     const data = await convertToFormData({ values, featuredImage });
@@ -29,7 +30,15 @@ const AddClient = ({}) => {
     history.push(`/${LINK_URL}`);
   };
 
-  const [dropdownOptions] = useGetDropdownOptions();
+  const [dropdownOptions, setClientSearchField, setClientSearchValue] =
+    useGetDropdownOptions();
+  const loadOptions = async (inputValue, callback, field) => {
+    if (field == "client") {
+      await setClientSearchField("name");
+      await setClientSearchValue(inputValue);
+      callback(dropdownOptions.client);
+    }
+  };
 
   return (
     <div className="pace-done">
@@ -62,6 +71,7 @@ const AddClient = ({}) => {
               initialValues={initialValues}
               dropdown_options={dropdownOptions}
               loading={add_client_loading}
+              loadOptions={loadOptions}
             />
           </div>
         </div>
