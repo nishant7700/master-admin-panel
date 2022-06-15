@@ -79,34 +79,34 @@ function FormComponents({
                 </div>
               );
             }
-            if (
-              inputFields[item] &&
-              !inputFields[item].hideOnEntry &&
-              inputFields[item].type === "related"
-            ) {
-              return (
-                <div className="col-md-6">
-                  <SelectBox
-                    label={inputFields[item].title}
-                    name={item}
-                    multiple={inputFields[item].multiple ? true : false}
-                  >
-                    <option value="">
-                      {/* Select {inputFields[item].title} */}
-                      --None--
-                    </option>
-                    {dropdown_options &&
-                      dropdown_options[item] &&
-                      dropdown_options[item].map((option) => {
-                        return (
-                          <option value={option.value}>{option.label}</option>
-                        );
-                      })}
-                  </SelectBox>
-                </div>
-              );
-            }
-            if (inputFields[item] && inputFields[item].type === "related-2") {
+            // if (
+            //   inputFields[item] &&
+            //   !inputFields[item].hideOnEntry &&
+            //   inputFields[item].type === "related"
+            // ) {
+            //   return (
+            //     <div className="col-md-6">
+            //       <SelectBox
+            //         label={inputFields[item].title}
+            //         name={item}
+            //         multiple={inputFields[item].multiple ? true : false}
+            //       >
+            //         <option value="">
+            //           {/* Select {inputFields[item].title} */}
+            //           --None--
+            //         </option>
+            //         {dropdown_options &&
+            //           dropdown_options[item] &&
+            //           dropdown_options[item].map((option) => {
+            //             return (
+            //               <option value={option.value}>{option.label}</option>
+            //             );
+            //           })}
+            //       </SelectBox>
+            //     </div>
+            //   );
+            // }
+            if (inputFields[item] && inputFields[item].type === "related") {
               return (
                 <div className="col-md-6">
                   <label> {inputFields[item].title} </label>
@@ -114,6 +114,9 @@ function FormComponents({
                   <AsyncSelect
                     loadOptions={(inputValue, callback) =>
                       loadOptions(inputValue, callback, item)
+                    }
+                    defaultInputValue={
+                      formik.values[item] ? formik.values[item] : ""
                     }
                     defaultOptions={dropdown_options && dropdown_options[item]}
                     onChange={(e) => {

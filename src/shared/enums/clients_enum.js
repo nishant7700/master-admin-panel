@@ -16,11 +16,10 @@ export const inputFields = {
     options: ["PAID", "NOT PAID"],
   },
   client: {
-    type: "related-2",
+    type: "related",
     required: true,
     title: "Client",
     inputType: "select",
-    options: ["PAID", "NOT PAID"],
   },
 };
 export const initialValues = {
