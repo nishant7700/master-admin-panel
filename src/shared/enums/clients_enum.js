@@ -4,33 +4,18 @@ export const LINK_URL = "clients";
 export const inputFields = {
   name: {
     type: "string",
-    required: true,
+    required: false,
     title: "Name",
-    inputType: "text",
-  },
-  payment_status: {
-    type: "select",
-    required: true,
-    title: "Payment Status",
-    inputType: "select",
-    options: ["PAID", "NOT PAID"],
-  },
-  client: {
-    type: "related",
-    required: true,
-    title: "Client",
-    inputType: "select",
+    inputType: "",
+    options: "",
+    field: "",
   },
 };
 export const initialValues = {
   name: "",
-  payment_status: "",
 };
 
-export const view_all_table = [
-  { name: "Name", value: "name" },
-  { name: "payment_status", value: "payment_status" },
-];
+export const view_all_table = [{ name: "Name", value: "name" }];
 
 export const SIDEBAR_OPTIONS = [
   {
@@ -39,34 +24,6 @@ export const SIDEBAR_OPTIONS = [
     label: "Name",
     type: "string",
     search_type: "search",
-    inputType: "text",
-    condition: "",
-  },
-  {
-    id: "payment_status",
-    field: "payment_status",
-    label: "Payment Status",
-    type: "select",
-    search_type: "exact",
-    inputType: "text",
-    condition: "",
-    options: ["PAID", "NOT PAID"],
-  },
-  {
-    id: "phone",
-    field: "phone",
-    label: "Phone",
-    type: "string",
-    search_type: "exact",
-    inputType: "text",
-    condition: "",
-  },
-  {
-    id: "client",
-    field: "client",
-    label: "Client",
-    type: "related",
-    search_type: "exact",
     inputType: "text",
     condition: "",
   },

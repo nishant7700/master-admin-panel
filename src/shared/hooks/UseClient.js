@@ -16,14 +16,12 @@ export const useAllClients = () => {
   const data = useSelector((state) => state.client);
   const [pageNumber, setPageNumber] = useState(1);
   const [deleteEntry, setDeleteEntry] = useState(null);
+  console.log("ID TO DELETE", deleteEntry);
   useEffect(() => {
     allQuery();
   }, [deleteEntry, pageNumber, window.location.search]);
   const allQuery = useCallback(
     _debounce(() => {
-      if (deleteEntry) {
-        dispatch(deleteClient(deleteEntry));
-      }
       dispatch(
         getClients({
           pageNumber,
@@ -32,6 +30,13 @@ export const useAllClients = () => {
     }, 1000),
     []
   );
+
+  useEffect(() => {
+    if (deleteEntry) {
+      dispatch(deleteClient(deleteEntry));
+      allQuery();
+    }
+  }, [deleteEntry]);
 
   useEffect(() => {
     setPageNumber(1);
